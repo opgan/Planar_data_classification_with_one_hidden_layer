@@ -1,0 +1,3 @@
+2024-12-19 16:10:41,680 - INFO - The shape of X is:  (2, 400)
+2024-12-19 16:10:41,680 - INFO - The shape of Y is:  (1, 400)
+2024-12-19 16:10:41,680 - INFO - There are m = 400 training examples!:  

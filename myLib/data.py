@@ -24,5 +24,9 @@ def injest():
     plt.scatter(X[0, :], X[1, :], c=Y, s=40, cmap=plt.colormaps.get_cmap("viridis"))
     plt.savefig('myPlots/load_planar_dataset.png')
 
+    log_to_file("The shape of X is:  " + str(shape_X))
+    log_to_file("The shape of Y is:  " + str(shape_Y))
+    log_to_file("There are m = %d training examples!:  " % (m))
+
     return X, Y 
 
