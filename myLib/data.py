@@ -3,12 +3,13 @@
 
 import numpy as np
 from myLib.mylog import log_to_file
-from myLib.planar_utils import plot_decision_boundary, sigmoid, load_planar_dataset, load_extra_datasets
+#from myLib.planar_utils import plot_decision_boundary, sigmoid, load_planar_dataset, load_extra_datasets
+from myLib.helper import generate_spiral_planar_dataset
 import matplotlib.pyplot as plt
 
 def injest():
     # Loading data
-    X, Y = load_planar_dataset()
+    X, Y = generate_spiral_planar_dataset()
 
     # Figure out the dimensions and shapes of the problem 
     shape_X = X.shape
