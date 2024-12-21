@@ -1,4 +1,4 @@
-# pylint: disable=E1101, unused-import
+# pylint: disable=unused-import
 
 
 import numpy as np
@@ -8,6 +8,16 @@ from myLib.helper import generate_spiral_planar_dataset
 import matplotlib.pyplot as plt
 
 def injest():
+    """
+    This function loads the flower-shaped dataset 
+
+    Argument:
+    none
+
+    Returns:
+    X -- data matrix (n_features, n_samples) (2, 400) representing 400 points, 2 (x1, x2) coordindates
+    Y -- labels  (n_labels, n_samples) (1, 400) representing red (0.0) and blue (1.0)
+    """
     # Loading data
     X, Y = generate_spiral_planar_dataset()
 
