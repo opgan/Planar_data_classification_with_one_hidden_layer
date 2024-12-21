@@ -1,5 +1,5 @@
 import numpy as np
-
+from myLib.mylog import log_to_file
 
 # 19 Dec 2024
 def generate_spiral_planar_dataset():
@@ -15,13 +15,21 @@ def generate_spiral_planar_dataset():
     for j in range(2):
         ix = range(N*j,N*(j+1)) # a range of indices, specifying where to insert the new data points into the X array and Y array
         # N evenly spaced numbers between 0 and 3.12 for red set and 3.12 and 6.24 for blue set
+        
         t = np.linspace(j*3.12,(j+1)*3.12,N) + np.random.randn(N)*0.2 # theta generate evenly spaced numbers over a specified interval and includes both the start and stop values 
+        #t = np.linspace(j*3.12,(j+1)*3.12,N) # theta generate evenly spaced numbers over a specified interval and includes both the start and stop values 
+
+
         r = a*np.sin(4*t) + np.random.randn(N)*0.2 # r is the radius, and t is the angle in radians.
+        #r = a*np.sin(4*t) # r is the radius, and t is the angle in radians.
+        #log_to_file("r is:  " + str(r) )
+
         # stacking the r*np.sin(t) and r*np.cos(t) arrays into a single array, where each row represents an (x, y) coordinate pair
         X[ix] = np.c_[r*np.sin(t), r*np.cos(t)] #Stacks these coordinates into a 2D X array, to specific positions within the X array, concatenates arrays column-wise
         Y[ix] = j
         
     X = X.T
     Y = Y.T
-
+    # Convert matrix to string representation b4 logging
+    #log_to_file("X is:  " + str(X) )
     return X, Y
