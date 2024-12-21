@@ -19,6 +19,7 @@ Binary classification with one hidden layer Neural Network and compare performan
 * create library folder: ``` mkdir myLib ```
     - testCases provides some test examples to assess the correctness of your functions
     - planar_utils provide various useful functions used in this assignment
+* Run scripts in ipython ```run main.py```
 
 ## Steps
     - Implement a 2-class classification neural network with a single hidden layer

@@ -22,7 +22,12 @@ def injest():
 
     # Visualize the data:
     plt.scatter(X[0, :], X[1, :], c=Y, s=40, cmap=plt.colormaps.get_cmap("viridis"))
-    plt.savefig('myPlots/load_planar_dataset.png')
+    plt.grid(True) 
+    plt.xlabel('x1')
+    plt.ylabel('x2')
+    plt.title("Flower Data") 
+    #plt.legend(handles=[plt.scatter([], [], c=i, label=f"Class {i}") for i in np.unique(Y)])
+    plt.savefig('plots/flower_dataset.png')
 
     log_to_file("The shape of X is:  " + str(shape_X))
     log_to_file("The shape of Y is:  " + str(shape_Y))

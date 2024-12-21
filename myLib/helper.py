@@ -1,3 +1,5 @@
+# pylint: disable=unused-import
+
 import numpy as np
 from myLib.mylog import log_to_file
 
