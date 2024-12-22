@@ -50,3 +50,7 @@
 2024-12-22 02:26:38,771 - INFO - The shape of Y is:  (1, 400)
 2024-12-22 02:26:38,771 - INFO - There are m = 400 training examples!:  
 2024-12-22 02:26:39,051 - INFO - Accuracy of logistic regression: 47 % (percentage of correctly labelled datapoints)
+2024-12-22 06:17:26,758 - INFO - The shape of X is:  (2, 400)
+2024-12-22 06:17:26,759 - INFO - The shape of Y is:  (1, 400)
+2024-12-22 06:17:26,759 - INFO - There are m = 400 training examples!:  
+2024-12-22 06:17:27,206 - INFO - Accuracy of logistic regression: 47 % (percentage of correctly labelled datapoints)

@@ -89,6 +89,28 @@ def fit_logistic_regression_model(X, Y):
     return clf
 
 
+def plot(X, Y):
+    """
+    Plot data
+
+    Arguments:
+    X -- (2, 400) array
+    Y -- (1, 400) array
+
+    Return:
+    plot saved into a .png file in folder plots
+    """
+
+    # Visualize the data:
+    plt.scatter(X[0, :], X[1, :], c=Y, s=40, cmap=plt.colormaps.get_cmap("viridis"))
+    plt.grid(True)
+    plt.xlabel("x1")
+    plt.ylabel("x2")
+    plt.title("Flower Data")
+    # plt.legend(handles=[plt.scatter([], [], c=i, label=f"Class {i}") for i in np.unique(Y)])
+    plt.savefig("plots/flower_dataset.png")
+
+
 def generate_spiral_planar_dataset():
     """
     This function generates flower-shaped data points
