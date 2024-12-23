@@ -1,0 +1,4 @@
+2024-12-22 07:02:27,353 - INFO - The shape of X is:  (2, 400)
+2024-12-22 07:02:27,354 - INFO - The shape of Y is:  (1, 400)
+2024-12-22 07:02:27,354 - INFO - There are m = 400 training examples!:  
+2024-12-22 07:02:27,800 - INFO - Accuracy of logistic regression: 47 % (percentage of correctly labelled datapoints)
