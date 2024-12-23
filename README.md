@@ -4,22 +4,25 @@
 Binary classification with one hidden layer Neural Network and compare performance with the traditional logistic regression.
 
 ## Set up working environment
-* create virtual environment: ```virtualenv ENV```
+* virtual environment: ```virtualenv ENV```
     - remove directory: ``` rm -r hENV```
-* add ```source ENV/bin/activate``` in .bashrc file
-    edit bashrc file ```vim ~/.bashrc``` and goes to the last line: ```shift + g``` 
-* create Makefile for make utility : ``` touch Makefile ```
-    - rename a file: ```mv oldfilename newfilename```
-* create Requirements.txt for package install : ``` touch Requirement.txt ```
+    - add ```source ENV/bin/activate``` in .bashrc file
+    - edit bashrc file ```vim ~/.bashrc``` and goes to the last line: ```shift + g``` 
+* Makefile for make utility : ``` touch Makefile ```
+    - format codes ``` make format ```
+    - run lint ``` make lint ```
+    - run main.py ``` make run```
+* Requirements.txt for package installation : ``` touch Requirement.txt ```
     - find out package version: ```pip freeze | less```
     - install packages: ``` make install ```
-        - [numpy](https://www.numpy.org/)
-        - [scikit-learn](http://scikit-learn.org/stable/)    
-        - [matplotlib](http://matplotlib.org) 
-* create library folder: ``` mkdir myLib ```
-    - testCases provides some test examples to assess the correctness of your functions
-    - planar_utils provide various useful functions used in this assignment
-* Run scripts inside ipython ```run main.py``` or directly fr command line ```python main.py```
+    - ``` pip install <name> ```
+* Project folders:
+   - create directory ``` mkdir myLib ```
+   - rename a file: ```mv oldfilename newfilename```
+   - myLib folder contains testCases provides some test examples to assess the correctness of your functions
+   - plots folder planar_utils provide various useful functions used in this assignment
+* Run
+  - inside ipython ```run main.py``` or fr command line ```python main.py```
 
 ## Steps
     - Implement a 2-class classification neural network with a single hidden layer
