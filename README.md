@@ -19,12 +19,16 @@ Binary classification with one hidden layer Neural Network and compare performan
 * Project folders:
    - create directory ``` mkdir myLib ```
    - rename a file: ```mv oldfilename newfilename```
-   - myLib folder contains testCases provides some test examples to assess the correctness of your functions
+   - myLib folder contains images of plots
+   - tests folder contains test scripts to assess the correctness of some functions
    - plots folder planar_utils provide various useful functions used in this assignment
-* Run
+* Logging
+    - info.log file contains information of prediction results
+* Running Main.py
   - inside ipython ```run main.py``` or fr command line ```python main.py```
 
 ## Steps
+    - Injest the dataset
     - Implement a 2-class classification neural network with a single hidden layer
     - Use the non-linear tanh activation function for hidden layer
     - Compute the cross entropy loss
