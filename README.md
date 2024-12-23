@@ -1,7 +1,7 @@
 [![Python Install/Lint with Github Actions](https://github.com/sktan888/Planar_data_classification_with_one_hidden_layer/actions/workflows/main.yml/badge.svg)](https://github.com/sktan888/Planar_data_classification_with_one_hidden_layer/actions/workflows/main.yml)
 
-# Planar_data_classification_with_one_hidden_layer
-Binary classification with one hidden layer Neural Network and compare performance with the traditional logistic regression.
+# Planar_data_classification_with_one_hidden_layer_Python
+Python implementation of Binary classification with one hidden layer Neural Network.
 
 ## Set up working environment
 * virtual environment: ```virtualenv ENV```
