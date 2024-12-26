@@ -1,8 +1,8 @@
-from myLib.data import injest
-from myLib.helper import fit_logistic_regression_model
-from myLib.helper import plot_decision_boundary
-from myLib.helper import compute_accuracy
-from myLib.helper import plot
+from lib.data import injest
+from lib.helper import fit_logistic_regression_model
+from lib.helper import compute_accuracy
+from lib.plot import plot
+from lib.plot import plot_decision_boundary
 
 X, Y = injest()  # X is (n_features, n_samples) Y is (n_label, n_samples)
 plot(X, Y)

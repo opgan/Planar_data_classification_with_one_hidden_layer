@@ -6,10 +6,10 @@ test:
 		python -m pytest -vv --cov=data tests/test_data.py 
 
 format:
-		black *.py myLib/*.py
+		black *.py lib/*.py
 
 lint:
-		pylint --disable=R,C *.py myLib/*.py tests/*.py
+		pylint --disable=R,C *.py lib/*.py tests/*.py
 
 refactor: format lint
 
