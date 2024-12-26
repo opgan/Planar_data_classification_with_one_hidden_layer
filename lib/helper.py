@@ -7,7 +7,30 @@ import sklearn
 import sklearn.linear_model
 
 
-def compute_accuracy(model, X, y):
+def compute_accuracy(model, X, y, plot_title):
+    """
+    This function computes train set accuracy
+
+    Argument:
+    model -- returns the predictions made by the trained clf model on that input
+    input data X -- (n_features, n_samples)
+    true labels y -- (n_label, n_samples)
+
+    Returns:
+    accuracy result saved in the mylog.file
+    """
+    y_predictions = model(X)  # X.T (n_samples, n_features) is given
+
+    y_predictions = y_predictions.reshape(1, y_predictions.shape[1]).T # transpose for np.dot operation
+
+    acc=(np.dot(y, y_predictions) + np.dot(1 - y, 1 - y_predictions)) / float(y.size) * 100
+    accuracy_string = "Accuracy of " + plot_title + " :" + str(np.squeeze(acc)) + "%% (percentage of correctly labelled datapoints)"
+
+    print(accuracy_string)
+    log(accuracy_string)
+
+
+def compute_accuracy2(model, X, y):
     """
     This function computes train set accuracy
 

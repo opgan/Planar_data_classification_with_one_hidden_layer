@@ -6,7 +6,7 @@ from lib.log import log
 import matplotlib.pyplot as plt
 
 
-def plot_decision_boundary(model, X, y):
+def plot_decision_boundary(model, X, y, plot_title):
     """
     This function fits the logistic regression model according to the given training data
 
@@ -27,9 +27,12 @@ def plot_decision_boundary(model, X, y):
         np.arange(x_min, x_max, h), np.arange(y_min, y_max, h)
     )  # column-wise ... arange() creates an array of evenly spaced values within a given interval.
     # Predict the function value for the whole grid
-    Z = model.predict(
-        np.c_[xx.ravel(), yy.ravel()]
-    )  # xx must be (n_features, n_samples) ... np.c[] concatenates arrays column-wise ..  ravel() returns a contiguous flattened array containing the elements of the input array
+    Z = model(np.c_[xx.ravel(), yy.ravel()])
+
+    # Z = model.predict(
+    #    np.c_[xx.ravel(), yy.ravel()]
+    # )  # xx must be (n_features, n_samples) ... np.c[] concatenates arrays column-wise ..  ravel() returns a contiguous flattened array containing the elements of the input array
+
     Z = Z.reshape(xx.shape)  # column-wise (n_samples, n_features)
     # Plot the contour and training examples
     plt.contourf(
@@ -38,8 +41,8 @@ def plot_decision_boundary(model, X, y):
     plt.scatter(X[0, :], X[1, :], c=y, cmap=plt.colormaps.get_cmap("coolwarm"))
     plt.ylabel("x2")
     plt.xlabel("x1")
-    plt.title("Logistic Regression")
-    plt.savefig("plots/decision_boundary.png")
+    plt.title(plot_title)
+    plt.savefig("plots/decision_boundary" + plot_title + ".png")
 
 
 def plot(X, Y):
