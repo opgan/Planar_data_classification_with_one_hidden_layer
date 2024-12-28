@@ -5,6 +5,30 @@ from lib.log import log
 
 import matplotlib.pyplot as plt
 
+def plot_costs(costs):
+    """
+    Plot costs list
+
+    Arguments:
+    costs -- list
+
+    Return:
+    plot saved into a costs.png file in folder plots
+    """
+    plt.clf()
+
+    # Create a range for the x-axis (iteration numbers)
+    iterations = range(1, len(costs) + 1) 
+
+    # Create the plot
+    plt.plot(iterations, costs)
+
+    # Add labels and title
+    plt.xlabel("Iterations")
+    plt.ylabel("Cost")
+    plt.title("Training Cost")
+
+    plt.savefig("plots/costs.png")
 
 def plot_decision_boundary(model, X, y, plot_title):
     """
@@ -18,6 +42,8 @@ def plot_decision_boundary(model, X, y, plot_title):
     Returns:
     a file of plot
     """
+    plt.clf()
+
     # Set min and max values and give it some padding
     x_min, x_max = X[0, :].min() - 1, X[0, :].max() + 1  # x2
     y_min, y_max = X[1, :].min() - 1, X[1, :].max() + 1  # x1
@@ -56,7 +82,7 @@ def plot(X, Y):
     Return:
     plot saved into a .png file in folder plots
     """
-
+    plt.clf()
     # Visualize the data:
     plt.scatter(X[0, :], X[1, :], c=Y, s=40, cmap=plt.colormaps.get_cmap("viridis"))
     plt.grid(True)

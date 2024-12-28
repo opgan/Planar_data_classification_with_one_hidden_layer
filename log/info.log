@@ -3,3 +3,15 @@
 2024-12-26 11:27:28,135 - INFO - There are m = 400 training examples!:  
 2024-12-26 11:27:28,565 - INFO - Accuracy of linear regression  :47.0%% (percentage of correctly labelled datapoints)
 2024-12-26 11:27:30,104 - INFO - Accuracy of hidden layer size 4 :90.75%% (percentage of correctly labelled datapoints)
+2024-12-28 01:26:20,460 - INFO - The shape of X is:  (2, 400)
+2024-12-28 01:26:20,460 - INFO - The shape of Y is:  (1, 400)
+2024-12-28 01:26:20,460 - INFO - There are m = 400 training examples!:  
+2024-12-28 01:26:20,908 - INFO - Accuracy of linear regression  :47.0%% (percentage of correctly labelled datapoints)
+2024-12-28 01:26:57,519 - INFO - The shape of X is:  (2, 400)
+2024-12-28 01:26:57,519 - INFO - The shape of Y is:  (1, 400)
+2024-12-28 01:26:57,519 - INFO - There are m = 400 training examples!:  
+2024-12-28 01:26:59,372 - INFO - Accuracy of hidden layer size 5 :91.0%% (percentage of correctly labelled datapoints)
+2024-12-28 01:32:50,444 - INFO - The shape of X is:  (2, 400)
+2024-12-28 01:32:50,444 - INFO - The shape of Y is:  (1, 400)
+2024-12-28 01:32:50,444 - INFO - There are m = 400 training examples!:  
+2024-12-28 01:32:52,331 - INFO - Accuracy of hidden layer size 5 :91.0%% (percentage of correctly labelled datapoints)
