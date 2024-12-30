@@ -5,6 +5,7 @@ from lib.log import log
 
 import matplotlib.pyplot as plt
 
+
 def plot_costs(costs):
     """
     Plot costs list
@@ -18,7 +19,7 @@ def plot_costs(costs):
     plt.clf()
 
     # Create a range for the x-axis (iteration numbers)
-    iterations = range(1, len(costs) + 1) 
+    iterations = range(1, len(costs) + 1)
 
     # Create the plot
     plt.plot(iterations, costs)
@@ -29,6 +30,7 @@ def plot_costs(costs):
     plt.title("Training Cost")
 
     plt.savefig("plots/costs.png")
+
 
 def plot_decision_boundary(model, X, y, plot_title):
     """
