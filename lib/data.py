@@ -3,6 +3,7 @@
 import numpy as np
 from lib.log import log
 import h5py
+from lib.helper import convert_to_one_hot
 
 # from myLib.planar_utils import plot_decision_boundary, sigmoid, load_planar_dataset, load_extra_datasets
 # from myLib.helper import generate_spiral_planar_dataset
@@ -51,33 +52,84 @@ def injest(dataset_name):
         # labels description
         classes = ["not smiling", "smiling"]
 
+    elif dataset_name == "signs_dataset":
+        X_train_orig, Y_train_orig, X_test_orig, Y_test_orig, classes = (
+            load_signs_dataset()
+        )
+
+        # Normalize image vectors
+        X_train = X_train_orig / 255.0
+        X_test = X_test_orig / 255.0
+
+        # Reshape
+        Y_train = convert_to_one_hot(Y_train_orig, 6).T
+        Y_test = convert_to_one_hot(Y_test_orig, 6).T
+
+        # labels description
+        classes = ["zero", "one", "two", "three", "four", "five"]
+
     # Figure out the dimensions and shapes of the problem
     shape_X = X_train.shape
     shape_Y = Y_train.shape
     m = shape_Y[0]
 
-    print("The shape of X train is: " + str(shape_X))
-    print("The shape of Y train is: " + str(shape_Y))
-    print("There are m = %d training examples!" % (m))
+    print(f"The shape of X train is: {shape_X}")
+    print(f"The shape of Y train is: {shape_Y}")
+    print(f"number of training examples =: {m}")
 
-    log("The shape of X train is:  " + str(shape_X))
-    log("The shape of Y train is:  " + str(shape_Y))
-    log("There are m = %d training examples!:  " % (m))
+    log(f"The shape of X train is: {shape_X}")
+    log(f"The shape of Y train is: {shape_Y}")
+    log(f"number of training examples =: {m}")
 
     shape_X = X_test.shape
     shape_Y = Y_test.shape
     m = shape_Y[0]
 
+    print(f"The shape of X test is: {shape_X}")
+    print(f"The shape of Y test is: {shape_Y}")
+    print(f"number of testing examples =: {m}")
 
-    print("The shape of X test is: " + str(shape_X))
-    print("The shape of Y test is: " + str(shape_Y))
-    print("There are m = %d testing examples!" % (m))
-    print(f"There are {len(classes)} classes: {classes}")    
-    log("The shape of X test is: " + str(shape_X))
-    log("The shape of Y test is: " + str(shape_Y))
-    log("There are m = %d testing examples!" % (m))
-    log(f"There are {len(classes)} classes: {classes}")       
+    log(f"The shape of X test is: {shape_X}")
+    log(f"The shape of Y test is: {shape_Y}")
+    log(f"number of testing examples =: {m}")
+
+    print(f"There are {len(classes)} classes: {classes}")
+    log(f"There are {len(classes)} classes: {classes}")
+
     return X_train, Y_train, X_test, Y_test, classes
+
+
+def load_signs_dataset():
+    """
+    This function loads signs dataset from file stored in datasets/ directory under the root directory of main.py
+
+    Argument:
+    none
+
+    Returns:
+    X_train -- (1080, 64, 64, 3)
+    Y_train -- (1080, 6)
+    X_test -- (120, 64, 64, 3)
+    Y_test -- (120, 6)
+    """
+    train_dataset = h5py.File("datasets/train_signs.h5", "r")
+    train_set_x_orig = np.array(
+        train_dataset["train_set_x"][:]
+    )  # your train set features
+    train_set_y_orig = np.array(
+        train_dataset["train_set_y"][:]
+    )  # your train set labels
+
+    test_dataset = h5py.File("datasets/test_signs.h5", "r")
+    test_set_x_orig = np.array(test_dataset["test_set_x"][:])  # your test set features
+    test_set_y_orig = np.array(test_dataset["test_set_y"][:])  # your test set labels
+
+    classes = np.array(test_dataset["list_classes"][:])  # the list of classes
+
+    train_set_y_orig = train_set_y_orig.reshape((1, train_set_y_orig.shape[0]))
+    test_set_y_orig = test_set_y_orig.reshape((1, test_set_y_orig.shape[0]))
+
+    return train_set_x_orig, train_set_y_orig, test_set_x_orig, test_set_y_orig, classes
 
 
 def load_happy_dataset():

@@ -23,3 +23,69 @@
 2025-01-01 11:42:39,674 - INFO - There are m = 150 testing examples!
 2025-01-01 11:42:39,674 - INFO - There are 2 classes: ['not smiling', 'smiling']
 2025-01-01 11:42:46,294 - INFO - loss is 0.54740 and accuracy is 0.65333
+2025-01-01 13:23:04,373 - INFO - The shape of X train is: (1080, 64, 64, 3)
+2025-01-01 13:23:04,373 - INFO - The shape of Y train is: (1080, 6)
+2025-01-01 13:23:04,373 - INFO - number of training examples =: 1080
+2025-01-01 13:23:04,374 - INFO - The shape of X test is: (120, 64, 64, 3)
+2025-01-01 13:23:04,374 - INFO - The shape of Y test is: (120, 6)
+2025-01-01 13:23:04,374 - INFO - number of testing examples =: 120
+2025-01-01 13:23:04,374 - INFO - There are 6 classes: ['zero', 'one', 'two', 'three', 'four', 'five']
+2025-01-01 13:24:20,339 - INFO - The shape of X train is: (1080, 64, 64, 3)
+2025-01-01 13:24:20,339 - INFO - The shape of Y train is: (1080, 6)
+2025-01-01 13:24:20,339 - INFO - number of training examples =: 1080
+2025-01-01 13:24:20,339 - INFO - The shape of X test is: (120, 64, 64, 3)
+2025-01-01 13:24:20,339 - INFO - The shape of Y test is: (120, 6)
+2025-01-01 13:24:20,339 - INFO - number of testing examples =: 120
+2025-01-01 13:24:20,339 - INFO - There are 6 classes: ['zero', 'one', 'two', 'three', 'four', 'five']
+2025-01-01 13:29:15,070 - INFO - The shape of X train is: (1080, 64, 64, 3)
+2025-01-01 13:29:15,070 - INFO - The shape of Y train is: (1080, 6)
+2025-01-01 13:29:15,070 - INFO - number of training examples =: 1080
+2025-01-01 13:29:15,070 - INFO - The shape of X test is: (120, 64, 64, 3)
+2025-01-01 13:29:15,070 - INFO - The shape of Y test is: (120, 6)
+2025-01-01 13:29:15,070 - INFO - number of testing examples =: 120
+2025-01-01 13:29:15,070 - INFO - There are 6 classes: ['zero', 'one', 'two', 'three', 'four', 'five']
+2025-01-01 13:33:50,631 - INFO - The shape of X train is: (1080, 64, 64, 3)
+2025-01-01 13:33:50,631 - INFO - The shape of Y train is: (1080, 6)
+2025-01-01 13:33:50,632 - INFO - number of training examples =: 1080
+2025-01-01 13:33:50,632 - INFO - The shape of X test is: (120, 64, 64, 3)
+2025-01-01 13:33:50,632 - INFO - The shape of Y test is: (120, 6)
+2025-01-01 13:33:50,632 - INFO - number of testing examples =: 120
+2025-01-01 13:33:50,632 - INFO - There are 6 classes: ['zero', 'one', 'two', 'three', 'four', 'five']
+2025-01-01 13:34:20,234 - INFO - The shape of X train is: (1080, 64, 64, 3)
+2025-01-01 13:34:20,234 - INFO - The shape of Y train is: (1080, 6)
+2025-01-01 13:34:20,234 - INFO - number of training examples =: 1080
+2025-01-01 13:34:20,234 - INFO - The shape of X test is: (120, 64, 64, 3)
+2025-01-01 13:34:20,234 - INFO - The shape of Y test is: (120, 6)
+2025-01-01 13:34:20,234 - INFO - number of testing examples =: 120
+2025-01-01 13:34:20,235 - INFO - There are 6 classes: ['zero', 'one', 'two', 'three', 'four', 'five']
+2025-01-01 13:56:31,973 - INFO - The shape of X train is: (1080, 64, 64, 3)
+2025-01-01 13:56:31,973 - INFO - The shape of Y train is: (1080, 6)
+2025-01-01 13:56:31,973 - INFO - number of training examples =: 1080
+2025-01-01 13:56:31,973 - INFO - The shape of X test is: (120, 64, 64, 3)
+2025-01-01 13:56:31,973 - INFO - The shape of Y test is: (120, 6)
+2025-01-01 13:56:31,973 - INFO - number of testing examples =: 120
+2025-01-01 13:56:31,974 - INFO - There are 6 classes: ['zero', 'one', 'two', 'three', 'four', 'five']
+2025-01-01 13:57:15,776 - INFO - The shape of X train is: (1080, 64, 64, 3)
+2025-01-01 13:57:15,777 - INFO - The shape of Y train is: (1080, 6)
+2025-01-01 13:57:15,777 - INFO - number of training examples =: 1080
+2025-01-01 13:57:15,777 - INFO - The shape of X test is: (120, 64, 64, 3)
+2025-01-01 13:57:15,777 - INFO - The shape of Y test is: (120, 6)
+2025-01-01 13:57:15,777 - INFO - number of testing examples =: 120
+2025-01-01 13:57:15,777 - INFO - There are 6 classes: ['zero', 'one', 'two', 'three', 'four', 'five']
+2025-01-01 13:57:19,582 - INFO - loss is 1.78747 and accuracy is 0.25000
+2025-01-01 13:59:22,544 - INFO - The shape of X train is: (1080, 64, 64, 3)
+2025-01-01 13:59:22,544 - INFO - The shape of Y train is: (1080, 6)
+2025-01-01 13:59:22,544 - INFO - number of training examples =: 1080
+2025-01-01 13:59:22,544 - INFO - The shape of X test is: (120, 64, 64, 3)
+2025-01-01 13:59:22,544 - INFO - The shape of Y test is: (120, 6)
+2025-01-01 13:59:22,544 - INFO - number of testing examples =: 120
+2025-01-01 13:59:22,544 - INFO - There are 6 classes: ['zero', 'one', 'two', 'three', 'four', 'five']
+2025-01-01 13:59:41,140 - INFO - loss is 1.62579 and accuracy is 0.40833
+2025-01-01 14:01:49,481 - INFO - The shape of X train is: (1080, 64, 64, 3)
+2025-01-01 14:01:49,481 - INFO - The shape of Y train is: (1080, 6)
+2025-01-01 14:01:49,481 - INFO - number of training examples =: 1080
+2025-01-01 14:01:49,482 - INFO - The shape of X test is: (120, 64, 64, 3)
+2025-01-01 14:01:49,482 - INFO - The shape of Y test is: (120, 6)
+2025-01-01 14:01:49,482 - INFO - number of testing examples =: 120
+2025-01-01 14:01:49,482 - INFO - There are 6 classes: ['zero', 'one', 'two', 'three', 'four', 'five']
+2025-01-01 14:02:08,182 - INFO - loss is 1.56862 and accuracy is 0.39167

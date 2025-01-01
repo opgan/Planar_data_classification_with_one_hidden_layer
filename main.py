@@ -2,7 +2,7 @@
 #!/usr/bin/env python3
 # python main.py
 
-
+import tensorflow as tf
 from lib.data import injest
 from lib.helper import fit_logistic_regression_model
 from lib.helper import compute_accuracy
@@ -16,6 +16,9 @@ from lib.tensorflow_motivation_example import iterate_train_steps
 from lib.huggingface_example import chat
 from lib.keras_sequential import build_model
 from lib.log import log
+
+from lib.convolutionnn import build_conv_model
+from lib.plot import plot_history
 
 import numpy as np
 import click
@@ -119,8 +122,8 @@ def run_chat():
 
 
 @cli.command()
-# @click.argument("n_h", type=int)
-def tensorflow_keras_sequential_model():
+@click.argument("epocs", type=int)
+def tensorflow_keras_sequential_model(epocs):
     """
     Builds a tensorflow keras sequential model
 
@@ -137,13 +140,48 @@ def tensorflow_keras_sequential_model():
     )  # X is (n_samples,n_features) Y is (n_samples, n_label)
     index = 155
     plot_image(
-        X_train[index], classes[np.squeeze(Y_train[index])]
+        X_train[index], classes[np.squeeze(Y_train[index])], "face"
     )  # X_train(600, 64, 64, 3), Y_train(600, 1)
     happy_model = build_model()
-    happy_model.fit(X_train, Y_train, epochs=2, batch_size=16)
+    happy_model.fit(X_train, Y_train, epochs=epocs, batch_size=16)
     loss, accuracy = happy_model.evaluate(X_test, Y_test)
-    print(f"loss is {loss:.5f} and accuracy is {accuracy:.5f}")  
-    log(f"loss is {loss:.5f} and accuracy is {accuracy:.5f}")      
+    print(f"loss is {loss:.5f} and accuracy is {accuracy:.5f}")
+    log(f"loss is {loss:.5f} and accuracy is {accuracy:.5f}")
+
+
+@cli.command()
+@click.argument("epocs", type=int)
+def tensorflow_keras_functional_api_model(epocs):
+    """
+    Builds a tensorflow keras functional_api model
+
+    Argument:
+    none
+
+    Returns:
+    Decision boundary plan saved as png file in plots folder
+    Accuracy of hidden layer saved info.log file in log folder
+    """
+
+    X_train, Y_train, X_test, Y_test, classes = injest(
+        "signs_dataset"
+    )  # X is (n_samples,n_features) Y is (n_samples, n_label)
+    index = 9
+    plot_image(
+        X_train[index],
+        classes[np.argmax(Y_train[index])],
+        "signs",  # Find the index of the first occurrence of 1 in Y_train e.g. [0., 0., 0., 0., 1., 0.]
+    )  # X_train(600, 64, 64, 3), Y_train(600, 1)
+
+    signs_model = build_conv_model((64, 64, 3))
+    train_dataset = tf.data.Dataset.from_tensor_slices((X_train, Y_train)).batch(64)
+    test_dataset = tf.data.Dataset.from_tensor_slices((X_test, Y_test)).batch(64)
+    history = signs_model.fit(train_dataset, epochs=epocs, validation_data=test_dataset)
+    plot_history(history)
+    loss, accuracy = signs_model.evaluate(test_dataset)
+    print(f"loss is {loss:.5f} and accuracy is {accuracy:.5f}")
+    log(f"loss is {loss:.5f} and accuracy is {accuracy:.5f}")
+
 
 if __name__ == "__main__":
     cli()

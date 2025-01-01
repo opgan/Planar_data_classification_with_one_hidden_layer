@@ -2,7 +2,7 @@
 
 import numpy as np
 from lib.log import log
-
+import pandas as pd
 import matplotlib.pyplot as plt
 
 
@@ -95,7 +95,7 @@ def plot(X, Y):
     plt.savefig("plots/flower_dataset.png")
 
 
-def plot_image(image, label):
+def plot_image(image, label, title):
     """
     Plot image
 
@@ -108,4 +108,30 @@ def plot_image(image, label):
     """
     plt.imshow(image)
     plt.title(label)
-    plt.savefig("plots/face.png")
+    plt.savefig("plots/" + title + ".png")
+
+
+def plot_history(history):
+    """
+    Plot loss and accuracy against epocs
+
+    Arguments:
+    history --
+
+
+    Return:
+    plot saved into a .png file in folder plots
+    """
+    df_loss_acc = pd.DataFrame(history.history)
+    df_loss = df_loss_acc[["loss", "val_loss"]]
+    df_loss.rename(columns={"loss": "train", "val_loss": "validation"}, inplace=True)
+    df_acc = df_loss_acc[["accuracy", "val_accuracy"]]
+    df_acc.rename(
+        columns={"accuracy": "train", "val_accuracy": "validation"}, inplace=True
+    )
+    df_loss.plot(title="Model loss", figsize=(12, 8)).set(xlabel="Epoch", ylabel="Loss")
+    plt.savefig("plots/loss.png")
+    df_acc.plot(title="Model Accuracy", figsize=(12, 8)).set(
+        xlabel="Epoch", ylabel="Accuracy"
+    )
+    plt.savefig("plots/accuracy.png")

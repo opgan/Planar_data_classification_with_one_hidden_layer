@@ -7,6 +7,11 @@ import sklearn
 import sklearn.linear_model
 
 
+def convert_to_one_hot(Y, C):
+    Y = np.eye(C)[Y.reshape(-1)].T
+    return Y
+
+
 def compute_accuracy(model, X, y, plot_title):
     """
     This function computes train set accuracy
