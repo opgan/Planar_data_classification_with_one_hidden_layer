@@ -93,3 +93,19 @@ def plot(X, Y):
     plt.title("Flower Data")
     # plt.legend(handles=[plt.scatter([], [], c=i, label=f"Class {i}") for i in np.unique(Y)])
     plt.savefig("plots/flower_dataset.png")
+
+
+def plot_image(image, label):
+    """
+    Plot image
+
+    Arguments:
+    image --  (64, 64, 3)
+    label --  class
+
+    Return:
+    plot saved into a .png file in folder plots
+    """
+    plt.imshow(image)
+    plt.title(label)
+    plt.savefig("plots/face.png")

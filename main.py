@@ -1,4 +1,4 @@
-# pylint: disable=unnecessary-lambda, unnecessary-pass, unused-argument
+# pylint: disable=unnecessary-lambda, unnecessary-pass, unused-argument, unused-variable
 #!/usr/bin/env python3
 # python main.py
 
@@ -8,6 +8,7 @@ from lib.helper import fit_logistic_regression_model
 from lib.helper import compute_accuracy
 from lib.plot import plot
 from lib.plot import plot_decision_boundary
+from lib.plot import plot_image
 from lib.one_hidden_layer_nn import nn_model
 from lib.one_hidden_layer_nn import predict
 from lib.plot import plot_costs
@@ -39,15 +40,17 @@ def logistic_regression_model():
     Accuracy of hidden layer saved info.log file in log folder
     """
 
-    X, Y = injest()  # X is (n_features, n_samples) Y is (n_label, n_samples)
-    plot(X, Y)
+    X_train, Y_train, X_test, Y_test, classes = injest(
+        "spiral_planar_dataset"
+    )  # X is (n_features, n_samples) Y is (n_label, n_samples)
+    plot(X_train, Y_train)
 
     # Build a model with linear regression
-    clf = fit_logistic_regression_model(X, Y)
+    clf = fit_logistic_regression_model(X_train, Y_train)
     plot_title = "linear regression "
-    plot_decision_boundary(lambda x: clf.predict(x), X, Y, plot_title)
+    plot_decision_boundary(lambda x: clf.predict(x), X_train, Y_train, plot_title)
     compute_accuracy(
-        lambda x: clf.predict(x.T).reshape(-1, 1).T, X, Y, plot_title
+        lambda x: clf.predict(x.T).reshape(-1, 1).T, X_train, Y_train, plot_title
     )  # X.T is (n_samples, n_features)
 
 
@@ -66,13 +69,19 @@ def one_hidden_layer_nn_model(n_h):
     """
     # n_h = 4
 
-    X, Y = injest()  # X is (n_features, n_samples) Y is (n_label, n_samples)
-    plot(X, Y)
+    X_train, Y_train, X_test, Y_test, classes = injest(
+        "spiral_planar_dataset"
+    )  # X is (n_features, n_samples) Y is (n_label, n_samples)
+    plot(X_train, Y_train)
 
-    parameters, costs = nn_model(X, Y, n_h, num_iterations=10000, print_cost=False)
+    parameters, costs = nn_model(
+        X_train, Y_train, n_h, num_iterations=10000, print_cost=False
+    )
     plot_title = "hidden layer size " + str(n_h)
-    plot_decision_boundary(lambda x: predict(parameters, x.T), X, Y, plot_title)
-    compute_accuracy(lambda x: predict(parameters, x), X, Y, plot_title)
+    plot_decision_boundary(
+        lambda x: predict(parameters, x.T), X_train, Y_train, plot_title
+    )
+    compute_accuracy(lambda x: predict(parameters, x), X_train, Y_train, plot_title)
     plot_costs(costs)
 
 
@@ -106,6 +115,29 @@ def run_chat():
     """
 
     chat()
+
+
+@cli.command()
+# @click.argument("n_h", type=int)
+def tensorflow_keras_sequential_model():
+    """
+    Builds a tensorflow keras sequential model
+
+    Argument:
+    none
+
+    Returns:
+    Decision boundary plan saved as png file in plots folder
+    Accuracy of hidden layer saved info.log file in log folder
+    """
+
+    X_train, Y_train, X_test, Y_test, classes = injest(
+        "happy_face_dataset"
+    )  # X is (n_features, n_samples) Y is (n_label, n_samples)
+    index = 124
+    plot_image(
+        X_train[index], classes[Y_train[index]]
+    )  # X_train(600, 64, 64, 3), Y_train(600, 1)
 
 
 if __name__ == "__main__":
