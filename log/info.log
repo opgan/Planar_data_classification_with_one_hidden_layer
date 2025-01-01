@@ -1,27 +1,25 @@
-2024-12-26 11:27:28,135 - INFO - The shape of X is:  (2, 400)
-2024-12-26 11:27:28,135 - INFO - The shape of Y is:  (1, 400)
-2024-12-26 11:27:28,135 - INFO - There are m = 400 training examples!:  
-2024-12-26 11:27:28,565 - INFO - Accuracy of linear regression  :47.0%% (percentage of correctly labelled datapoints)
-2024-12-26 11:27:30,104 - INFO - Accuracy of hidden layer size 4 :90.75%% (percentage of correctly labelled datapoints)
-2024-12-28 01:26:20,460 - INFO - The shape of X is:  (2, 400)
-2024-12-28 01:26:20,460 - INFO - The shape of Y is:  (1, 400)
-2024-12-28 01:26:20,460 - INFO - There are m = 400 training examples!:  
-2024-12-28 01:26:20,908 - INFO - Accuracy of linear regression  :47.0%% (percentage of correctly labelled datapoints)
-2024-12-28 01:26:57,519 - INFO - The shape of X is:  (2, 400)
-2024-12-28 01:26:57,519 - INFO - The shape of Y is:  (1, 400)
-2024-12-28 01:26:57,519 - INFO - There are m = 400 training examples!:  
-2024-12-28 01:26:59,372 - INFO - Accuracy of hidden layer size 5 :91.0%% (percentage of correctly labelled datapoints)
-2024-12-28 01:32:50,444 - INFO - The shape of X is:  (2, 400)
-2024-12-28 01:32:50,444 - INFO - The shape of Y is:  (1, 400)
-2024-12-28 01:32:50,444 - INFO - There are m = 400 training examples!:  
-2024-12-28 01:32:52,331 - INFO - Accuracy of hidden layer size 5 :91.0%% (percentage of correctly labelled datapoints)
-2024-12-30 01:47:39,072 - INFO - Tensorflow motivating example resulted in optimised parameter as  :<tf.Variable 'Variable:0' shape=() dtype=float32, numpy=0.0>
-2024-12-30 02:01:46,039 - INFO - Tensorflow motivating example resulted in optimised parameter as  :<tf.Variable 'Variable:0' shape=() dtype=float32, numpy=0.9923909306526184>
-2024-12-30 02:10:37,455 - INFO - Tensorflow motivating example resulted in optimised parameter as  :<tf.Variable 'Variable:0' shape=() dtype=float32, numpy=1.4745348691940308>
-2024-12-30 02:11:13,400 - INFO - Tensorflow motivating example resulted in optimised parameter as  :<tf.Variable 'Variable:0' shape=() dtype=float32, numpy=5.039001941680908>
-2024-12-30 02:11:22,932 - INFO - Tensorflow motivating example resulted in optimised parameter as  :<tf.Variable 'Variable:0' shape=() dtype=float32, numpy=0.1999405324459076>
-2024-12-30 02:11:30,038 - INFO - Tensorflow motivating example resulted in optimised parameter as  :<tf.Variable 'Variable:0' shape=() dtype=float32, numpy=0.4990130364894867>
-2024-12-30 02:11:35,501 - INFO - Tensorflow motivating example resulted in optimised parameter as  :<tf.Variable 'Variable:0' shape=() dtype=float32, numpy=4.0988616943359375>
-2024-12-30 02:11:44,793 - INFO - Tensorflow motivating example resulted in optimised parameter as  :<tf.Variable 'Variable:0' shape=() dtype=float32, numpy=5.039001941680908>
-2024-12-30 02:11:57,025 - INFO - Tensorflow motivating example resulted in optimised parameter as  :<tf.Variable 'Variable:0' shape=() dtype=float32, numpy=5.000109672546387>
-2024-12-30 02:13:02,813 - INFO - Tensorflow motivating example resulted in optimised parameter as  :<tf.Variable 'Variable:0' shape=() dtype=float32, numpy=5.039001941680908>
+2025-01-01 11:32:30,427 - INFO - The shape of X train is:  (600, 64, 64, 3)
+2025-01-01 11:32:30,427 - INFO - The shape of Y train is:  (600, 1)
+2025-01-01 11:32:30,427 - INFO - There are m = 600 training examples!:  
+2025-01-01 11:32:30,427 - INFO - The shape of X test is: (150, 64, 64, 3)
+2025-01-01 11:32:30,427 - INFO - The shape of Y test is: (150, 1)
+2025-01-01 11:32:30,427 - INFO - There are m = 150 testing examples!
+2025-01-01 11:32:30,427 - INFO - There are 2 classes: ['not smiling', 'smiling']
+2025-01-01 11:32:30,584 - INFO - None
+2025-01-01 11:32:56,290 - INFO - loss is 0.2221195250749588 and accuracy is 0.9133333563804626
+2025-01-01 11:36:09,398 - INFO - The shape of X train is:  (600, 64, 64, 3)
+2025-01-01 11:36:09,398 - INFO - The shape of Y train is:  (600, 1)
+2025-01-01 11:36:09,398 - INFO - There are m = 600 training examples!:  
+2025-01-01 11:36:09,398 - INFO - The shape of X test is: (150, 64, 64, 3)
+2025-01-01 11:36:09,398 - INFO - The shape of Y test is: (150, 1)
+2025-01-01 11:36:09,398 - INFO - There are m = 150 testing examples!
+2025-01-01 11:36:09,398 - INFO - There are 2 classes: ['not smiling', 'smiling']
+2025-01-01 11:36:15,775 - INFO - loss is 0.48018285632133484 and accuracy is 0.7599999904632568
+2025-01-01 11:42:39,674 - INFO - The shape of X train is:  (600, 64, 64, 3)
+2025-01-01 11:42:39,674 - INFO - The shape of Y train is:  (600, 1)
+2025-01-01 11:42:39,674 - INFO - There are m = 600 training examples!:  
+2025-01-01 11:42:39,674 - INFO - The shape of X test is: (150, 64, 64, 3)
+2025-01-01 11:42:39,674 - INFO - The shape of Y test is: (150, 1)
+2025-01-01 11:42:39,674 - INFO - There are m = 150 testing examples!
+2025-01-01 11:42:39,674 - INFO - There are 2 classes: ['not smiling', 'smiling']
+2025-01-01 11:42:46,294 - INFO - loss is 0.54740 and accuracy is 0.65333

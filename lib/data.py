@@ -28,7 +28,7 @@ def injest(dataset_name):
     X_test = []
     Y_test = []
     classes = []
-    
+
     # Loading data
     if dataset_name == "spiral_planar_dataset":
         X, Y = generate_spiral_planar_dataset()
@@ -48,10 +48,13 @@ def injest(dataset_name):
         Y_train = Y_train_orig.T
         Y_test = Y_test_orig.T
 
+        # labels description
+        classes = ["not smiling", "smiling"]
+
     # Figure out the dimensions and shapes of the problem
     shape_X = X_train.shape
     shape_Y = Y_train.shape
-    m = shape_Y[1]
+    m = shape_Y[0]
 
     print("The shape of X train is: " + str(shape_X))
     print("The shape of Y train is: " + str(shape_Y))
@@ -63,15 +66,17 @@ def injest(dataset_name):
 
     shape_X = X_test.shape
     shape_Y = Y_test.shape
-    m = shape_Y[1]
+    m = shape_Y[0]
+
 
     print("The shape of X test is: " + str(shape_X))
     print("The shape of Y test is: " + str(shape_Y))
     print("There are m = %d testing examples!" % (m))
+    print(f"There are {len(classes)} classes: {classes}")    
     log("The shape of X test is: " + str(shape_X))
     log("The shape of Y test is: " + str(shape_Y))
     log("There are m = %d testing examples!" % (m))
-
+    log(f"There are {len(classes)} classes: {classes}")       
     return X_train, Y_train, X_test, Y_test, classes
 
 

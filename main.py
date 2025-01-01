@@ -14,9 +14,10 @@ from lib.one_hidden_layer_nn import predict
 from lib.plot import plot_costs
 from lib.tensorflow_motivation_example import iterate_train_steps
 from lib.huggingface_example import chat
+from lib.keras_sequential import build_model
+from lib.log import log
 
-# import numpy as np
-# from lib.log import log
+import numpy as np
 import click
 
 
@@ -133,12 +134,16 @@ def tensorflow_keras_sequential_model():
 
     X_train, Y_train, X_test, Y_test, classes = injest(
         "happy_face_dataset"
-    )  # X is (n_features, n_samples) Y is (n_label, n_samples)
-    index = 124
+    )  # X is (n_samples,n_features) Y is (n_samples, n_label)
+    index = 155
     plot_image(
-        X_train[index], classes[Y_train[index]]
+        X_train[index], classes[np.squeeze(Y_train[index])]
     )  # X_train(600, 64, 64, 3), Y_train(600, 1)
-
+    happy_model = build_model()
+    happy_model.fit(X_train, Y_train, epochs=2, batch_size=16)
+    loss, accuracy = happy_model.evaluate(X_test, Y_test)
+    print(f"loss is {loss:.5f} and accuracy is {accuracy:.5f}")  
+    log(f"loss is {loss:.5f} and accuracy is {accuracy:.5f}")      
 
 if __name__ == "__main__":
     cli()
