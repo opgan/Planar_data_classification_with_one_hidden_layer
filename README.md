@@ -13,7 +13,7 @@ Python implementation of Binary classification with one hidden layer Neural Netw
     - run lint ``` make lint ```
     - run main.py ``` make run```
 * Requirements.txt for package installation : ``` touch Requirement.txt ```
-    - find out package version: ```pip freeze | less```
+    - find out package version: ```pip freeze | less``` ``` !pip freeze | grep "tf" | less ```
     - install packages: ``` make install ```
     - ``` pip install <name> ```
 * Project folders:

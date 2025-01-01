@@ -1,0 +1,25 @@
+2025-01-01 11:32:30,427 - INFO - The shape of X train is:  (600, 64, 64, 3)
+2025-01-01 11:32:30,427 - INFO - The shape of Y train is:  (600, 1)
+2025-01-01 11:32:30,427 - INFO - There are m = 600 training examples!:  
+2025-01-01 11:32:30,427 - INFO - The shape of X test is: (150, 64, 64, 3)
+2025-01-01 11:32:30,427 - INFO - The shape of Y test is: (150, 1)
+2025-01-01 11:32:30,427 - INFO - There are m = 150 testing examples!
+2025-01-01 11:32:30,427 - INFO - There are 2 classes: ['not smiling', 'smiling']
+2025-01-01 11:32:30,584 - INFO - None
+2025-01-01 11:32:56,290 - INFO - loss is 0.2221195250749588 and accuracy is 0.9133333563804626
+2025-01-01 11:36:09,398 - INFO - The shape of X train is:  (600, 64, 64, 3)
+2025-01-01 11:36:09,398 - INFO - The shape of Y train is:  (600, 1)
+2025-01-01 11:36:09,398 - INFO - There are m = 600 training examples!:  
+2025-01-01 11:36:09,398 - INFO - The shape of X test is: (150, 64, 64, 3)
+2025-01-01 11:36:09,398 - INFO - The shape of Y test is: (150, 1)
+2025-01-01 11:36:09,398 - INFO - There are m = 150 testing examples!
+2025-01-01 11:36:09,398 - INFO - There are 2 classes: ['not smiling', 'smiling']
+2025-01-01 11:36:15,775 - INFO - loss is 0.48018285632133484 and accuracy is 0.7599999904632568
+2025-01-01 11:42:39,674 - INFO - The shape of X train is:  (600, 64, 64, 3)
+2025-01-01 11:42:39,674 - INFO - The shape of Y train is:  (600, 1)
+2025-01-01 11:42:39,674 - INFO - There are m = 600 training examples!:  
+2025-01-01 11:42:39,674 - INFO - The shape of X test is: (150, 64, 64, 3)
+2025-01-01 11:42:39,674 - INFO - The shape of Y test is: (150, 1)
+2025-01-01 11:42:39,674 - INFO - There are m = 150 testing examples!
+2025-01-01 11:42:39,674 - INFO - There are 2 classes: ['not smiling', 'smiling']
+2025-01-01 11:42:46,294 - INFO - loss is 0.54740 and accuracy is 0.65333
