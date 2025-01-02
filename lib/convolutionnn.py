@@ -31,7 +31,7 @@ def convolutional_model(input_shape):
     model -- TF Keras model (object containing the information for the entire training process)
     """
 
-    input_img = tf.keras.Input(shape=input_shape) # pylint: disable= no-member
+    input_img = tf.keras.Input(shape=input_shape)  # pylint: disable= no-member
     ## CONV2D: 8 filters 4x4, stride of 1, padding 'SAME'
     # Z1 = None
     ## RELU
@@ -59,5 +59,7 @@ def convolutional_model(input_shape):
     F = tfl.Flatten()(P2)
     outputs = tfl.Dense(units=6, activation="softmax")(F)
     # YOUR CODE ENDS HERE
-    model = tf.keras.Model(inputs=input_img, outputs=outputs) # pylint: disable= no-member
+    model = tf.keras.Model(  # pylint: disable= no-member
+        inputs=input_img, outputs=outputs
+    )  # pylint: disable= no-member
     return model

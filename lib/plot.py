@@ -6,6 +6,32 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 
+def plot_performance(metric, title):
+    """
+    Plot costs or accuracy
+
+    Arguments:
+    costs, accuracy test, accuracy train -- lists
+
+    Return:
+    plot saved into a title.png file in folder plots
+    """
+    plt.clf()
+
+    # Create a range for the x-axis (iteration numbers)
+    iterations = range(1, len(metric) + 1)
+
+    # Create the plot
+    plt.plot(iterations, metric)
+
+    # Add labels and title
+    plt.xlabel("Iterations")
+    plt.ylabel(title)
+    plt.title("Performance")
+
+    plt.savefig("plots/" + title + ".png")
+
+
 def plot_costs(costs):
     """
     Plot costs list
@@ -93,6 +119,28 @@ def plot(X, Y):
     plt.title("Flower Data")
     # plt.legend(handles=[plt.scatter([], [], c=i, label=f"Class {i}") for i in np.unique(Y)])
     plt.savefig("plots/flower_dataset.png")
+
+
+def plot_images(x_train, y_train, title):
+    """
+    Plot image
+
+    Arguments:
+    x_train --    TensorFlow Datasets
+    y_train --    TensorFlow Datasets
+
+    Return:
+    plot saved into a .png file in folder plots
+    """
+    images_iter = iter(x_train)
+    labels_iter = iter(y_train)
+    plt.figure(figsize=(10, 10))
+    for i in range(25):
+        _ = plt.subplot(5, 5, i + 1)
+        plt.imshow(next(images_iter).numpy().astype("uint8"))
+        plt.title(next(labels_iter).numpy().astype("uint8"))
+        plt.axis("off")
+    plt.savefig("plots/" + title + ".png")
 
 
 def plot_image(image, label, title):

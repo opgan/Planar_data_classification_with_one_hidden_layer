@@ -89,3 +89,17 @@
 2025-01-01 14:01:49,482 - INFO - number of testing examples =: 120
 2025-01-01 14:01:49,482 - INFO - There are 6 classes: ['zero', 'one', 'two', 'three', 'four', 'five']
 2025-01-01 14:02:08,182 - INFO - loss is 1.56862 and accuracy is 0.39167
+2025-01-02 13:02:37,800 - INFO - The shape of X train is: (12288,)
+2025-01-02 13:02:37,802 - INFO - The shape of Y train is: (6,)
+2025-01-02 13:02:37,802 - INFO - number of training examples =: 1080
+2025-01-02 13:02:37,802 - INFO - The shape of X test is: (12288,)
+2025-01-02 13:02:37,803 - INFO - The shape of Y test is: (6,)
+2025-01-02 13:02:37,803 - INFO - number of testing examples =: 120
+2025-01-02 13:02:37,803 - INFO - There are 6 classes: {np.int64(0), np.int64(1), np.int64(2), np.int64(3), np.int64(4), np.int64(5)}
+2025-01-02 13:15:52,194 - INFO - The shape of X train is: (64, 64, 3)
+2025-01-02 13:15:52,194 - INFO - The shape of Y train is: ()
+2025-01-02 13:15:52,194 - INFO - number of training examples =: 1080
+2025-01-02 13:15:52,194 - INFO - The shape of X test is: (64, 64, 3)
+2025-01-02 13:15:52,194 - INFO - The shape of Y test is: ()
+2025-01-02 13:15:52,194 - INFO - number of testing examples =: 120
+2025-01-02 13:15:52,194 - INFO - There are 6 classes: {np.int64(0), np.int64(1), np.int64(2), np.int64(3), np.int64(4), np.int64(5)}

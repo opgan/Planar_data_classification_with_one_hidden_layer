@@ -5,6 +5,48 @@ from lib.log import log
 import sklearn
 
 import sklearn.linear_model
+import tensorflow as tf
+
+def one_hot_matrix(label, C=6):
+    """
+    Computes the one hot encoding for a single label
+
+    Arguments:
+        label --  (int) Categorical labels
+        C --  (int) Number of different classes that label can take
+
+    Returns:
+         one_hot -- tf.Tensor A one-dimensional tensor (array) with the one hot encoding.
+    """
+    one_hot = tf.reshape(
+        tf.one_hot(label, C, axis=0),
+        shape=[
+            C,
+        ],
+    )
+
+    return one_hot
+
+
+def normalize(image):
+    """
+    Transform an image into a tensor of shape (64 * 64 * 3, )
+    and normalize its components.
+
+    Arguments
+    image - Tensor.
+
+    Returns:
+    result -- Transformed tensor
+    """
+    image = tf.cast(image, tf.float32) / 255.0
+    image = tf.reshape(
+        image,
+        [
+            -1,
+        ],
+    )
+    return image
 
 
 def convert_to_one_hot(Y, C):
