@@ -22,8 +22,8 @@ from lib.plot import plot_history
 from lib.plot import plot_images
 from lib.plot import plot_performance
 from lib.tensorflow_nn import model
-from lib.helper import normalize
-from lib.helper import one_hot_matrix
+from lib.tensorflow_nn import normalize
+from lib.tensorflow_nn import one_hot_matrix
 
 import numpy as np
 import click
@@ -202,7 +202,9 @@ def tensorflow_convnn_model(epoch):
     Accuracy of hidden layer saved info.log file in log folder
     """
 
-    X_train_orig, Y_train_orig, X_test_orig, Y_test_orig, classes = injest("tensorflow_dataset")
+    X_train_orig, Y_train_orig, X_test_orig, Y_test_orig, classes = injest(
+        "tensorflow_dataset"
+    )
     # index = 9
     plot_images(
         X_train_orig,

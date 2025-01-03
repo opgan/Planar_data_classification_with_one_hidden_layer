@@ -20,7 +20,7 @@ def compute_total_loss(logits, labels):
     # remember to set `from_logits=True`
     # total_loss = ...
     # YOUR CODE STARTS HERE
-    total_loss = tf.reduce_sum( # pylint: disable= no-member
+    total_loss = tf.reduce_sum(  # pylint: disable= no-member
         tf.keras.losses.categorical_crossentropy(  # pylint: disable= no-member
             tf.transpose(labels), tf.transpose(logits), from_logits=True
         )
@@ -58,9 +58,9 @@ def forward_propagation(X, parameters):
     # Z3 = ...                           # Z3 = np.dot(W3, A2) + b3
     # YOUR CODE STARTS HERE
     Z1 = tf.math.add(tf.linalg.matmul(W1, X), b1)
-    A1 = tf.keras.activations.relu(Z1) # pylint: disable= no-member
+    A1 = tf.keras.activations.relu(Z1)  # pylint: disable= no-member
     Z2 = tf.math.add(tf.linalg.matmul(W2, A1), b2)
-    A2 = tf.keras.activations.relu(Z2) # pylint: disable= no-member
+    A2 = tf.keras.activations.relu(Z2)  # pylint: disable= no-member
     Z3 = tf.math.add(tf.linalg.matmul(W3, A2), b3)
     # YOUR CODE ENDS HERE
 
@@ -81,7 +81,9 @@ def initialize_parameters():
     parameters -- a dictionary of tensors containing W1, b1, W2, b2, W3, b3
     """
 
-    initializer = tf.keras.initializers.GlorotNormal(seed=1) # pylint: disable= no-member
+    initializer = tf.keras.initializers.GlorotNormal(  # pylint: disable= no-member
+        seed=1
+    ) 
 
     W1 = tf.Variable(initializer(shape=[25, 12288]))
     b1 = tf.Variable(initializer(shape=[25, 1]))
@@ -138,11 +140,13 @@ def model(
     W3 = parameters["W3"]
     b3 = parameters["b3"]
 
-    optimizer = tf.keras.optimizers.Adam(learning_rate) # pylint: disable= no-member
+    optimizer = tf.keras.optimizers.Adam(learning_rate)  # pylint: disable= no-member
 
     # The CategoricalAccuracy will track the accuracy for this multiclass problem
-    test_accuracy = tf.keras.metrics.CategoricalAccuracy() # pylint: disable= no-member
-    train_accuracy = tf.keras.metrics.CategoricalAccuracy() # pylint: disable= no-member
+    test_accuracy = tf.keras.metrics.CategoricalAccuracy()  # pylint: disable= no-member
+    train_accuracy = (
+        tf.keras.metrics.CategoricalAccuracy() # pylint: disable= no-member
+    )  
 
     dataset = tf.data.Dataset.zip((X_train, Y_train))
     test_dataset = tf.data.Dataset.zip((X_test, Y_test))
@@ -161,7 +165,7 @@ def model(
         epoch_total_loss = 0.0
 
         # We need to reset object to start measuring from 0 the accuracy each epoch
-        train_accuracy.reset_states()
+        train_accuracy.reset_state()
 
         for minibatch_X, minibatch_Y in minibatches:
 
@@ -197,9 +201,30 @@ def model(
             costs.append(epoch_total_loss)
             train_acc.append(train_accuracy.result())
             test_acc.append(test_accuracy.result())
-            test_accuracy.reset_states()
+            test_accuracy.reset_state()
 
     return parameters, costs, train_acc, test_acc
+
+
+def one_hot_matrix(label, C=6):
+    """
+    Computes the one hot encoding for a single label
+
+    Arguments:
+        label --  (int) Categorical labels
+        C --  (int) Number of different classes that label can take
+
+    Returns:
+         one_hot -- tf.Tensor A one-dimensional tensor (array) with the one hot encoding.
+    """
+    one_hot = tf.reshape(
+        tf.one_hot(label, C, axis=0),
+        shape=[
+            C,
+        ],
+    )
+
+    return one_hot
 
 
 def normalize(image):

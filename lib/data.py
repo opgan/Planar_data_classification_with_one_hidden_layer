@@ -4,12 +4,9 @@ import numpy as np
 from lib.log import log
 import h5py
 from lib.helper import convert_to_one_hot
-from lib.helper import normalize
-from lib.helper import one_hot_matrix
+#from lib.helper import normalize
+#from lib.helper import one_hot_matrix
 import tensorflow as tf
-
-# from myLib.planar_utils import plot_decision_boundary, sigmoid, load_planar_dataset, load_extra_datasets
-# from myLib.helper import generate_spiral_planar_dataset
 
 
 def injest(dataset_name):
@@ -76,11 +73,8 @@ def injest(dataset_name):
             load_signs_dataset_in_tensorflow_dataset()
         )
 
-
-
         # labels description classes is set (do not allow duplicate), while not list (allows duplicate)
-        #classes = ["zero", "one", "two", "three", "four", "five"]
-
+        # classes = ["zero", "one", "two", "three", "four", "five"]
 
     # Figure out the dimensions and shapes of the problem
     if dataset_name == "tensorflow_dataset":
@@ -89,7 +83,7 @@ def injest(dataset_name):
         m_train = X_train.cardinality().numpy()
         shape_X_test = X_test.element_spec.shape
         shape_Y_test = Y_test.element_spec.shape
-        m_test = X_test.cardinality().numpy()        
+        m_test = X_test.cardinality().numpy()
     else:
         shape_X_train = X_train.shape
         shape_Y_train = Y_train.shape
@@ -97,7 +91,6 @@ def injest(dataset_name):
         shape_X_test = X_test.shape
         shape_Y_test = Y_test.shape
         m_test = shape_Y_test[0]
-
 
     print(f"The shape of X train is: {shape_X_train}")
     print(f"The shape of Y train is: {shape_Y_train}")
@@ -107,19 +100,18 @@ def injest(dataset_name):
     log(f"The shape of Y train is: {shape_Y_train}")
     log(f"number of training examples =: {m_train}")
 
-
-
     print(f"The shape of X test is: {shape_X_test}")
     print(f"The shape of Y test is: {shape_Y_test}")
     print(f"number of testing examples =: {m_test}")
     log(f"The shape of X test is: {shape_X_test}")
     log(f"The shape of Y test is: {shape_Y_test}")
     log(f"number of testing examples =: {m_test}")
- 
+
     print(f"There are {len(classes)} classes: {classes}")
     log(f"There are {len(classes)} classes: {classes}")
 
     return X_train, Y_train, X_test, Y_test, classes
+
 
 def load_signs_dataset_in_tensorflow_dataset():
     """
@@ -129,18 +121,18 @@ def load_signs_dataset_in_tensorflow_dataset():
     none
 
     Returns:
-    X_train --  
-    Y_train --  
-    X_test --  
-    Y_test --  
+    X_train --
+    Y_train --
+    X_test --
+    Y_test --
     """
     train_dataset = h5py.File("datasets/train_signs.h5", "r")
     test_dataset = h5py.File("datasets/test_signs.h5", "r")
 
-    X_train = tf.data.Dataset.from_tensor_slices(train_dataset['train_set_x'])
-    Y_train = tf.data.Dataset.from_tensor_slices(train_dataset['train_set_y'])
-    X_test = tf.data.Dataset.from_tensor_slices(test_dataset['test_set_x'])
-    Y_test = tf.data.Dataset.from_tensor_slices(test_dataset['test_set_y'])
+    X_train = tf.data.Dataset.from_tensor_slices(train_dataset["train_set_x"])
+    Y_train = tf.data.Dataset.from_tensor_slices(train_dataset["train_set_y"])
+    X_test = tf.data.Dataset.from_tensor_slices(test_dataset["test_set_x"])
+    Y_test = tf.data.Dataset.from_tensor_slices(test_dataset["test_set_y"])
 
     classes = set()
     for element in Y_train:
